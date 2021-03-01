@@ -1,0 +1,27 @@
+// Copyright (C) 2021, International Business Machines
+// Corporation.  All Rights Reserved.
+
+// This program is distributed under the terms of the
+// Eclipse Public License - v 2.0
+
+This work is described in the paper:
+Francisco Barahona and Joao Goncalves,
+Training Neural Networks with an algorithm for piecewise linear functions
+2021
+
+This code is an implementation of the algorithm described
+in the paper above to be used in TensorFlow.
+
+In order to use this optimizer, add the following to your
+TensorFlow code:
+
+import volume_optimizer
+
+Also, you need to substitute the call to your current optimizer
+(for example, the gradient descent optimizer) by a call
+to the Volume optimizer. For example, if you have a line
+such as
+opt = tf.train.GradientDescentOptimizer()
+replace it with
+opt = volume_optimizer.VOLUME()
+
